@@ -29,6 +29,8 @@ namespace F16Viper
 
         protected override void Update(GameTime gameTime)
         {
+            _currentGameState.Update(gameTime);
+
             base.Update(gameTime);
         }
 
