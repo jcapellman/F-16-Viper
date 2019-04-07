@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using F16Viper.library.Renderables.Base;
 
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace F16Viper.library.GameStates.Base
@@ -18,6 +19,11 @@ namespace F16Viper.library.GameStates.Base
         }
 
         private List<BaseRenderable> _renderables = new List<BaseRenderable>();
+
+        public virtual void LoadContent(ContentManager contentManager)
+        {
+
+        }
 
         public virtual void Render(SpriteBatch spriteBatch)
         {
