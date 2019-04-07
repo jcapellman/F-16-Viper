@@ -5,6 +5,7 @@ using F16Viper.library.GameStates.Base;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace F16Viper
 {
@@ -48,7 +49,7 @@ namespace F16Viper
 
         protected override void Update(GameTime gameTime)
         {
-            _currentGameState.Update(gameTime);
+            _currentGameState.Update(gameTime, Keyboard.GetState(), GamePad.GetState(PlayerIndex.One));
 
             base.Update(gameTime);
         }
