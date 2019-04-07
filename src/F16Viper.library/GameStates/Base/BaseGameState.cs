@@ -2,6 +2,7 @@
 
 using F16Viper.library.Renderables.Base;
 
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace F16Viper.library.GameStates.Base
@@ -20,6 +21,14 @@ namespace F16Viper.library.GameStates.Base
             }
 
             spriteBatch.End();
+        }
+
+        public virtual void Update(GameTime gameTime)
+        {
+            foreach (var renderable in _renderables)
+            {
+                renderable.Update(gameTime);
+            }
         }
     }
 }

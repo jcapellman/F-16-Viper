@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)GameStates\Base\BaseGameState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameStates\SplashScreenGameState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainGame.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Renderables\Airplane.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Renderables\Base\BaseRenderable.cs" />
