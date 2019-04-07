@@ -1,4 +1,6 @@
-﻿using F16Viper.library.GameStates;
+﻿using System;
+
+using F16Viper.library.GameStates;
 using F16Viper.library.GameStates.Base;
 
 using Microsoft.Xna.Framework;
@@ -24,7 +26,20 @@ namespace F16Viper
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            _currentGameState = new SplashScreenGameState();
+            ChangeState(typeof(SplashScreenGameState));
+        }
+
+        private void ChangeState(Type typeOfState)
+        {
+            var state = (BaseGameState) Activator.CreateInstance(typeOfState);
+
+            state.OnStateChange -= _currentGameState_OnStateChange;
+            state.OnStateChange += _currentGameState_OnStateChange;
+        }
+
+        private void _currentGameState_OnStateChange(object sender, Type e)
+        {
+            ChangeState(e);
         }
 
         protected override void Update(GameTime gameTime)
