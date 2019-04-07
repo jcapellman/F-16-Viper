@@ -6,6 +6,7 @@ using F16Viper.library.Renderables.Base;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace F16Viper.library.GameStates.Base
 {
@@ -37,11 +38,11 @@ namespace F16Viper.library.GameStates.Base
             spriteBatch.End();
         }
 
-        public virtual void Update(GameTime gameTime)
+        public virtual void Update(GameTime gameTime, KeyboardState keyboardState, GamePadState gamePadState)
         {
             foreach (var renderable in _renderables)
             {
-                renderable.Update(gameTime);
+                renderable.Update(gameTime, keyboardState, gamePadState);
             }
         }
     }
