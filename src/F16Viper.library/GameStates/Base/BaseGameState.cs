@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using F16Viper.library.Renderables.Base;
 
@@ -9,6 +10,13 @@ namespace F16Viper.library.GameStates.Base
 {
     public abstract class BaseGameState
     {
+        public event EventHandler<Type> OnStateChange;
+
+        protected void ChangeState(Type type)
+        {
+            OnStateChange?.Invoke(null, type);
+        }
+
         private List<BaseRenderable> _renderables = new List<BaseRenderable>();
 
         public virtual void Render(SpriteBatch spriteBatch)
