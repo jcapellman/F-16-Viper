@@ -10,21 +10,21 @@ namespace F16Viper
 {
     public class MainGame : Game
     {
-        private GraphicsDeviceManager graphics;
-        private SpriteBatch spriteBatch;
+        private GraphicsDeviceManager _graphics;
+        private SpriteBatch _spriteBatch;
         
         private BaseGameState _currentGameState;
 
         public MainGame()
         {
-            graphics = new GraphicsDeviceManager(this);
+            _graphics = new GraphicsDeviceManager(this);
 
             Content.RootDirectory = "Content";
         }
 
         protected override void LoadContent()
         {
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+            _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             ChangeState(typeof(SplashScreenGameState));
         }
@@ -35,6 +35,10 @@ namespace F16Viper
 
             state.OnStateChange -= _currentGameState_OnStateChange;
             state.OnStateChange += _currentGameState_OnStateChange;
+
+            state.LoadContent(Content);
+
+            _currentGameState = state;
         }
 
         private void _currentGameState_OnStateChange(object sender, Type e)
@@ -53,7 +57,7 @@ namespace F16Viper
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            _currentGameState.Render(spriteBatch);
+            _currentGameState.Render(_spriteBatch);
 
             base.Draw(gameTime);
         }
