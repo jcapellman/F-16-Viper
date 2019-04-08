@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using F16Viper.library.Containers;
 using F16Viper.library.Renderables.Base;
 
 using Microsoft.Xna.Framework;
@@ -21,18 +22,15 @@ namespace F16Viper.library.GameStates.Base
 
         private List<BaseRenderable> _renderables = new List<BaseRenderable>();
 
-        public virtual void LoadContent(ContentManager contentManager)
-        {
+        public abstract void LoadContent(ContentManager contentManager);
 
-        }
-
-        public virtual void Render(SpriteBatch spriteBatch)
+        public virtual void Render(SpriteBatch spriteBatch, WindowContainer windowContainer)
         {
             spriteBatch.Begin();
 
             foreach (var renderable in _renderables)
             {
-                renderable.Render(spriteBatch);
+                renderable.Render(spriteBatch, windowContainer);
             }
 
             spriteBatch.End();
