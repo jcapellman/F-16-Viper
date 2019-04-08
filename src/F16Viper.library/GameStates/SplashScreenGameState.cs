@@ -3,12 +3,18 @@
 using F16Viper.library.GameStates.Base;
 
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
 
 namespace F16Viper.library.GameStates
 {
     public class SplashScreenGameState : BaseGameState
     {
+        public override void LoadContent(ContentManager contentManager)
+        {
+            
+        }
+
         public override void Update(GameTime gameTime, KeyboardState keyboardState, GamePadState gamePadState)
         {
             if (keyboardState.GetPressedKeys().Any())
