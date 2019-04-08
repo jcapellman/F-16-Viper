@@ -1,5 +1,6 @@
 ﻿using System;
 
+using F16Viper.library.Containers;
 using F16Viper.library.GameStates;
 using F16Viper.library.GameStates.Base;
 
@@ -15,6 +16,13 @@ namespace F16Viper
         private SpriteBatch _spriteBatch;
         
         private BaseGameState _currentGameState;
+
+        private WindowContainer WindowContainer =>
+            new WindowContainer
+            {
+                ResolutionY = _graphics.PreferredBackBufferHeight,
+                ResolutionX = _graphics.PreferredBackBufferWidth
+            };
 
         public MainGame()
         {
@@ -58,7 +66,7 @@ namespace F16Viper
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            _currentGameState.Render(_spriteBatch);
+            _currentGameState.Render(_spriteBatch, WindowContainer);
 
             base.Draw(gameTime);
         }
