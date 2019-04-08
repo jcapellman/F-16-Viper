@@ -22,6 +22,11 @@ namespace F16Viper.library.GameStates.Base
 
         private List<BaseRenderable> _renderables = new List<BaseRenderable>();
 
+        protected void AddRenderable(BaseRenderable renderable)
+        {
+            _renderables.Add(renderable);
+        }
+
         public abstract void LoadContent(ContentManager contentManager);
 
         public virtual void Render(SpriteBatch spriteBatch, WindowContainer windowContainer)
