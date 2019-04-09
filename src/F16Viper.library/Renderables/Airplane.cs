@@ -10,19 +10,23 @@ namespace F16Viper.library.Renderables
 {
     public class Airplane : BaseRenderable
     {
+        private string _airplane;
+
+        private Texture2D _airplaneTexture;
+
         public override void LoadContent(ContentManager contentManager)
         {
-            throw new System.NotImplementedException();
+            _airplaneTexture = contentManager.Load<Texture2D>($"fighters/{_airplane}");
         }
 
         public override void Render(SpriteBatch spriteBatch, WindowContainer windowContainer)
         {
-            throw new System.NotImplementedException();
+            spriteBatch.Draw(_airplaneTexture, Vector2.One, Color.White);
         }
 
         public override void Update(GameTime gameTime, KeyboardState keyboardState, GamePadState gamePadState)
         {
-            throw new System.NotImplementedException();
+
         }
     }
 }
