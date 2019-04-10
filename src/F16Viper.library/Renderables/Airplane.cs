@@ -14,6 +14,11 @@ namespace F16Viper.library.Renderables
 
         private Texture2D _airplaneTexture;
 
+        public Airplane(string airplaneName)
+        {
+            _airplane = airplaneName;
+        }
+
         public override void LoadContent(ContentManager contentManager)
         {
             _airplaneTexture = contentManager.Load<Texture2D>($"fighters/{_airplane}");
