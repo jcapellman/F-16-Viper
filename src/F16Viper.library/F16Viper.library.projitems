@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Containers\WindowContainer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameStates\Base\BaseGameState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameStates\MainGameState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameStates\MainMenuGameState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameStates\SplashScreenGameState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainGame.cs" />
