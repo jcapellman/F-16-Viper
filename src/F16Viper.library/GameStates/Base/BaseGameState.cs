@@ -15,6 +15,8 @@ namespace F16Viper.library.GameStates.Base
     {
         public event EventHandler<Type> OnStateChange;
 
+        protected KeyboardState _oldKeyboardState;
+
         protected void ChangeState(Type type)
         {
             OnStateChange?.Invoke(null, type);
