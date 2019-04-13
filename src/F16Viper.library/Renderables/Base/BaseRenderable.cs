@@ -13,8 +13,8 @@ namespace F16Viper.library.Renderables.Base
 
         public void UpdatePosition(int x, int y)
         {
-            Position.X = x;
-            Position.Y = y;
+            Position.X += x;
+            Position.Y += y;
         }
 
         public abstract void LoadContent(ContentManager contentManager);
