@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using F16Viper.library.Containers;
 using F16Viper.library.Renderables.Base;
@@ -28,6 +29,8 @@ namespace F16Viper.library.GameStates.Base
         {
             _renderables.Add(renderable);
         }
+
+        protected T GetRenderable<T>() where T : BaseRenderable => (T)_renderables.FirstOrDefault(a => a.GetType() == typeof(T));
 
         public abstract void LoadContent(ContentManager contentManager);
 
