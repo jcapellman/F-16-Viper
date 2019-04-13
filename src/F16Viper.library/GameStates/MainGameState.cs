@@ -21,22 +21,22 @@ namespace F16Viper.library.GameStates
         {
             if (keyboardState.IsKeyDown(Keys.Left))
             {
-                // TODO: Move Player Left
+                GetRenderable<Player>().UpdatePosition(-Player.MOVEMENT_X, 0);
             }
 
             if (keyboardState.IsKeyDown(Keys.Right))
             {
-                // TODO: Move Player Right
+                GetRenderable<Player>().UpdatePosition(Player.MOVEMENT_X, 0);
             }
 
             if (keyboardState.IsKeyDown(Keys.Up))
             {
-                // TODO: Move Player Up
+                GetRenderable<Player>().UpdatePosition(0, -Player.MOVEMENT_Y);
             }
 
             if (keyboardState.IsKeyDown(Keys.Down))
             {
-                // TODO: Move Player Down
+                GetRenderable<Player>().UpdatePosition(0, Player.MOVEMENT_Y);
             }
 
             if (_oldKeyboardState.IsKeyUp(Keys.Space) && keyboardState.IsKeyDown(Keys.Space))
