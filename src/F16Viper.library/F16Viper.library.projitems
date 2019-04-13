@@ -18,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Renderables\Airplane.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Renderables\Base\BaseRenderable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Renderables\FSSplash.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Renderables\Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />

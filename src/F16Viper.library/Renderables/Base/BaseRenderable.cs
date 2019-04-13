@@ -9,6 +9,14 @@ namespace F16Viper.library.Renderables.Base
 {
     public abstract class BaseRenderable
     {
+        protected Vector2 Position;
+
+        public void UpdatePosition(int x, int y)
+        {
+            Position.X = x;
+            Position.Y = y;
+        }
+
         public abstract void LoadContent(ContentManager contentManager);
 
         public abstract void Render(SpriteBatch spriteBatch, WindowContainer windowContainer);
