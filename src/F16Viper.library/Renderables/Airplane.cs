@@ -17,6 +17,8 @@ namespace F16Viper.library.Renderables
         public Airplane(string airplaneName)
         {
             _airplane = airplaneName;
+
+            Position = Vector2.One;
         }
 
         public override void LoadContent(ContentManager contentManager)
@@ -26,7 +28,7 @@ namespace F16Viper.library.Renderables
 
         public override void Render(SpriteBatch spriteBatch, WindowContainer windowContainer)
         {
-            spriteBatch.Draw(_airplaneTexture, Vector2.One, Color.White);
+            spriteBatch.Draw(_airplaneTexture, Position, Color.White);
         }
 
         public override void Update(GameTime gameTime, KeyboardState keyboardState, GamePadState gamePadState)
