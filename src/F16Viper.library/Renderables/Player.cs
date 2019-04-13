@@ -11,6 +11,10 @@ namespace F16Viper.library.Renderables
     {
         private const string PLAYER_STARTING_PLANE = "F18";
 
+        // TODO: Have these pulled per plane type
+        public const int MOVEMENT_Y = 10;
+        public const int MOVEMENT_X = 10;
+
         public Player() : base(PLAYER_STARTING_PLANE) { }
 
         public override void LoadContent(ContentManager contentManager)
