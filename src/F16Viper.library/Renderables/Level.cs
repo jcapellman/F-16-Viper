@@ -1,16 +1,14 @@
 ﻿using System.Collections.Generic;
-using System.IO;
+
+using F16Viper.Common.library.Managers;
 
 using F16Viper.library.Containers;
-using F16Viper.library.JSONObjects;
 using F16Viper.library.Renderables.Base;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
-using Newtonsoft.Json;
 
 namespace F16Viper.library.Renderables
 {
@@ -27,7 +25,7 @@ namespace F16Viper.library.Renderables
 
         public override void LoadContent(ContentManager contentManager)
         {
-            var levelObject = JsonConvert.DeserializeObject<LevelJSON>(File.ReadAllText($"Levels/{_levelName}.json"));
+            var levelObject = LevelManager.LoadLevel(_levelName);
 
             foreach (var texture in levelObject.Textures)
             {
