@@ -22,12 +22,12 @@ namespace F16Viper.library.Renderables
 
         public class RenderableTile
         {
-            public int TextureID { get; set; }
+            public int TextureId { get; set; }
 
             public Vector2 Position { get; set; }
         }
 
-        private List<RenderableTile> _tiles = new List<RenderableTile>();
+        private readonly List<RenderableTile> _tiles = new List<RenderableTile>();
 
         public Level(string levelName)
         {
@@ -54,7 +54,7 @@ namespace F16Viper.library.Renderables
                 _tiles.Add(new RenderableTile
                 {
                     Position = new Vector2(0, _textureMaps[tile].Height * index * -1),
-                    TextureID = tile
+                    TextureId = tile
                 });
 
                 index++;
@@ -65,14 +65,14 @@ namespace F16Viper.library.Renderables
         {
             foreach (var tile in _tiles)
             {
-                for (var x = 0; x < windowContainer.ResolutionX / _textureMaps[tile.TextureID].Width + 1; x++)
+                for (var x = 0; x < windowContainer.ResolutionX / _textureMaps[tile.TextureId].Width + 1; x++)
                 {
                     var tilePosition = tile.Position;
-                    tilePosition.X = x * _textureMaps[tile.TextureID].Width;
+                    tilePosition.X = x * _textureMaps[tile.TextureId].Width;
 
-                    spriteBatch.Draw(_textureMaps[tile.TextureID],
+                    spriteBatch.Draw(_textureMaps[tile.TextureId],
                         tilePosition,
-                        new Rectangle(0, 0, _textureMaps[tile.TextureID].Width, _textureMaps[tile.TextureID].Height),
+                        new Rectangle(0, 0, _textureMaps[tile.TextureId].Width, _textureMaps[tile.TextureId].Height),
                         Color.White);
                 }
             }
