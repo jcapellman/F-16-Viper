@@ -34,5 +34,10 @@ namespace F16Viper.LevelEditor
         {
             ViewModel.SaveLevel();
         }
+
+        private void BtnAddTile_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.AddTile();
+        }
     }
 }

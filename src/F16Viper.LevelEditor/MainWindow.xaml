@@ -33,7 +33,13 @@
 
             <!-- Tile Selector -->
             <Grid Grid.Column="0" Background="#0e0e0e">
-                <ListView Background="Transparent" BorderBrush="Transparent" BorderThickness="0" HorizontalContentAlignment="Center" ItemsSource="{Binding Tiles}">
+                <ListView Background="Transparent" BorderBrush="Transparent" BorderThickness="0" HorizontalContentAlignment="Center" ItemsSource="{Binding Tiles}" SelectedItem="{Binding SelectedTile, Mode=TwoWay}">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <UniformGrid Columns="1"/>
@@ -49,7 +55,38 @@
 
             <!-- Tile Map -->
             <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
+                <Label Grid.Row="0" Content="START OF LEVEL" HorizontalAlignment="Center" Foreground="White" />
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Row="0" Content="Add Tile" Click="BtnAddTile_Click" />
+
+                    <ListView Grid.Row="1" Background="Transparent" BorderThickness="0" ItemsSource="{Binding CurrentMapTiles}">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Image MaxHeight="100" Source="{Binding}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+                
+                <Label Grid.Row="2" Content="END OF LEVEL" HorizontalAlignment="Center" Foreground="White" />
             </Grid>
         </Grid>
     </Grid>

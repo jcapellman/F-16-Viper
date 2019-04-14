@@ -2,9 +2,9 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using System.Windows.Media.Imaging;
 
 using F16Viper.Common.library.JSONObjects;
 using F16Viper.Common.library.Managers;
@@ -29,14 +29,40 @@ namespace F16Viper.LevelEditor.ViewModel
             }
         }
 
+        private ObservableCollection<string> _currentMapTiles;
+
+        public ObservableCollection<string> CurrentMapTiles
+        {
+            get => _currentMapTiles;
+
+            set
+            {
+                _currentMapTiles = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _selectedTile;
+
+        public string SelectedTile
+        {
+            get => _selectedTile;
+
+            set
+            {
+                _selectedTile = value;
+                OnPropertyChanged();
+            }
+        }
+
         // TODO: Make this configurable
         private const string TILE_FILE_PATH = "../../../../../assets/gfx/Tiles/";
 
         public MainViewModel()
         {
-            _currentLevel = new LevelJSON();
-
             LoadTiles();
+
+            NewLevel();
         }
 
         private void LoadTiles()
@@ -49,6 +75,13 @@ namespace F16Viper.LevelEditor.ViewModel
             {
                 Tiles.Add(new FileInfo(file).FullName);
             }
+
+            SelectedTile = Tiles.FirstOrDefault();
+        }
+
+        internal void AddTile()
+        {
+            CurrentMapTiles.Add(SelectedTile);
         }
 
         internal void NewLevel()
@@ -56,6 +89,8 @@ namespace F16Viper.LevelEditor.ViewModel
             _currentFileName = string.Empty;
 
             _currentLevel = new LevelJSON();
+
+            CurrentMapTiles = new ObservableCollection<string>();
         }
 
         internal void LoadLevel()
