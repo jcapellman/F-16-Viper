@@ -9,9 +9,24 @@ namespace F16Viper.LevelEditor
             InitializeComponent();
         }
 
-        private void ButtonExit_Click(object sender, RoutedEventArgs e)
+        private void mnuItemExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void mnuItemNew_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void mnuItemOpen_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void mnuItemSave_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
