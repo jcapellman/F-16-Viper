@@ -11,15 +11,15 @@ namespace F16Viper.library.GameStates
     {
         public override void LoadContent(ContentManager contentManager)
         {
-            var player = new Player();
-            player.LoadContent(contentManager);
-
-            AddRenderable(player);
-
             var level = new Level("E1M1");
             level.LoadContent(contentManager);
 
             AddRenderable(level);
+
+            var player = new Player();
+            player.LoadContent(contentManager);
+
+            AddRenderable(player);
         }
 
         public override void Update(GameTime gameTime, KeyboardState keyboardState, GamePadState gamePadState)
