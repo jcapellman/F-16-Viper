@@ -10,7 +10,7 @@ namespace F16Viper.library.Renderables
 {
     public class FSSplash : BaseRenderable
     {
-        private string _textureName;
+        private readonly string _textureName;
 
         private Texture2D _texture;
 

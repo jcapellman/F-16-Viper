@@ -10,7 +10,7 @@ namespace F16Viper.library.Renderables
 {
     public class Airplane : BaseRenderable
     {
-        private string _airplane;
+        private readonly string _airplane;
 
         private Texture2D _airplaneTexture;
 

@@ -12,7 +12,7 @@ namespace F16Viper
 {
     public class MainGame : Game
     {
-        private GraphicsDeviceManager _graphics;
+        private readonly GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         
         private BaseGameState _currentGameState;
@@ -42,15 +42,15 @@ namespace F16Viper
         {
             var state = (BaseGameState) Activator.CreateInstance(typeOfState);
 
-            state.OnStateChange -= _currentGameState_OnStateChange;
-            state.OnStateChange += _currentGameState_OnStateChange;
+            state.OnStateChange -= CurrentGameState_OnStateChange;
+            state.OnStateChange += CurrentGameState_OnStateChange;
 
             state.LoadContent(Content);
 
             _currentGameState = state;
         }
 
-        private void _currentGameState_OnStateChange(object sender, Type e)
+        private void CurrentGameState_OnStateChange(object sender, Type e)
         {
             ChangeState(e);
         }

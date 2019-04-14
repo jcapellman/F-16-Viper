@@ -23,7 +23,7 @@ namespace F16Viper.library.GameStates.Base
             OnStateChange?.Invoke(null, type);
         }
 
-        private List<BaseRenderable> _renderables = new List<BaseRenderable>();
+        private readonly List<BaseRenderable> _renderables = new List<BaseRenderable>();
 
         protected void AddRenderable(BaseRenderable renderable)
         {
