@@ -114,6 +114,13 @@ namespace F16Viper.LevelEditor.ViewModel
                 _currentFileName = ofd.FileName;
 
                 _currentLevel = LevelManager.LoadLevelFile(_currentFileName);
+
+                foreach (var tile in _currentLevel.Tiles)
+                {
+                    var textureName = _currentLevel.Textures[tile];
+
+                    CurrentMapTiles.Add(TileMapping[textureName]);
+                }
             }
         }
 
