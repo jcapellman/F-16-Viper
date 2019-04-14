@@ -47,7 +47,7 @@ namespace F16Viper.library.Renderables
                 index++;
             }
 
-            index = 0;
+            index = -1;
 
             foreach (var tile in level.Tiles)
             {
@@ -65,10 +65,16 @@ namespace F16Viper.library.Renderables
         {
             foreach (var tile in _tiles)
             {
-                spriteBatch.Draw(_textureMaps[tile.TextureID],
-                    tile.Position,
-                    new Rectangle(0, 0, _textureMaps[tile.TextureID].Width, _textureMaps[tile.TextureID].Height),
-                    Color.White);
+                for (var x = 0; x < windowContainer.ResolutionX / _textureMaps[tile.TextureID].Width + 1; x++)
+                {
+                    var tilePosition = tile.Position;
+                    tilePosition.X = x * _textureMaps[tile.TextureID].Width;
+
+                    spriteBatch.Draw(_textureMaps[tile.TextureID],
+                        tilePosition,
+                        new Rectangle(0, 0, _textureMaps[tile.TextureID].Width, _textureMaps[tile.TextureID].Height),
+                        Color.White);
+                }
             }
         }
 
