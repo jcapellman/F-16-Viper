@@ -43,5 +43,10 @@ namespace F16Viper.LevelEditor
             lvMap.SelectedIndex = lvMap.Items.Count - 1;
             lvMap.ScrollIntoView(lvMap.SelectedItem);
         }
+
+        private void BtnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.RemoveTile();
+        }
     }
 }

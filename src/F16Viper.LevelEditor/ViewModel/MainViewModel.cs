@@ -14,7 +14,7 @@ namespace F16Viper.LevelEditor.ViewModel
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        public struct Tile
+        public class Tile
         {
             public string FilePath { get; set; }
 
@@ -41,6 +41,34 @@ namespace F16Viper.LevelEditor.ViewModel
             set
             {
                 _tiles = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Tile _selectedMapTile;
+
+        public Tile SelectedMapTile
+        {
+            get => _selectedMapTile;
+
+            set
+            {
+                _selectedMapTile = value;
+                OnPropertyChanged();
+
+                RemoveContextItemEnabled = value != null;
+            }
+        }
+
+        private bool _RemoveContextItemEnabled;
+
+        public bool RemoveContextItemEnabled
+        {
+            get => _RemoveContextItemEnabled;
+
+            set
+            {
+                _RemoveContextItemEnabled = value;
                 OnPropertyChanged();
             }
         }
@@ -81,6 +109,11 @@ namespace F16Viper.LevelEditor.ViewModel
             NewLevel();
         }
 
+        internal void RemoveTile()
+        {
+            CurrentMapTiles.Remove(SelectedMapTile);
+        }
+
         private void LoadTiles()
         {
             Tiles = new ObservableCollection<String>();
@@ -107,6 +140,8 @@ namespace F16Viper.LevelEditor.ViewModel
         internal void NewLevel()
         {
             _currentFileName = string.Empty;
+
+            SelectedMapTile = null;
 
             _currentLevel = new LevelJSON();
 

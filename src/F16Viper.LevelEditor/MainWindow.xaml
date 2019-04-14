@@ -71,7 +71,17 @@
 
                     <Button Grid.Row="0" Content="Add Tile" Click="BtnAddTile_Click" />
 
-                    <ListView x:Name="lvMap" Grid.Row="1" Background="Transparent" BorderThickness="0" ItemsSource="{Binding CurrentMapTiles}">
+                    <ListView x:Name="lvMap" Grid.Row="1" Background="Transparent" SelectedItem="{Binding SelectedMapTile, Mode=TwoWay}" BorderThickness="0" ItemsSource="{Binding CurrentMapTiles}">
+                        <ListView.ContextMenu>
+                            <ContextMenu Name="ZoneIformationList" StaysOpen="true" Background="WhiteSmoke">
+                                <ContextMenu.BitmapEffect>
+                                    <BitmapEffectGroup/>
+                                </ContextMenu.BitmapEffect>
+
+                                <MenuItem Header="Remove" Name="Remove" IsEnabled="{Binding RemoveContextItemEnabled, Mode=TwoWay}" Click="BtnRemove_Click" />
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                        
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListViewItem">
                                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />
