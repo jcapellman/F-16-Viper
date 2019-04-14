@@ -71,7 +71,7 @@
 
                     <Button Grid.Row="0" Content="Add Tile" Click="BtnAddTile_Click" />
 
-                    <ListView Grid.Row="1" Background="Transparent" BorderThickness="0" ItemsSource="{Binding CurrentMapTiles}">
+                    <ListView x:Name="lvMap" Grid.Row="1" Background="Transparent" BorderThickness="0" ItemsSource="{Binding CurrentMapTiles}">
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListViewItem">
                                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -80,7 +80,7 @@
                         
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <Image MaxHeight="100" Source="{Binding}"/>
+                                <Image MaxHeight="100" Source="{Binding FilePath}"/>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>

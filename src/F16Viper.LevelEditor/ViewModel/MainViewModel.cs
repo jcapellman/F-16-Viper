@@ -14,6 +14,19 @@ namespace F16Viper.LevelEditor.ViewModel
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+        public struct Tile
+        {
+            public string FilePath { get; set; }
+
+            public Guid ID { get; set; }
+
+            public Tile(string filePath)
+            {
+                FilePath = filePath;
+                ID = Guid.NewGuid();
+            }
+        }
+
         private string _currentFileName = string.Empty;
         private LevelJSON _currentLevel;
 
@@ -32,9 +45,9 @@ namespace F16Viper.LevelEditor.ViewModel
             }
         }
 
-        private ObservableCollection<string> _currentMapTiles;
+        private ObservableCollection<Tile> _currentMapTiles;
 
-        public ObservableCollection<string> CurrentMapTiles
+        public ObservableCollection<Tile> CurrentMapTiles
         {
             get => _currentMapTiles;
 
@@ -88,7 +101,7 @@ namespace F16Viper.LevelEditor.ViewModel
 
         internal void AddTile()
         {
-            CurrentMapTiles.Add(SelectedTile);
+            CurrentMapTiles.Add(new Tile(SelectedTile));
         }
 
         internal void NewLevel()
@@ -97,7 +110,7 @@ namespace F16Viper.LevelEditor.ViewModel
 
             _currentLevel = new LevelJSON();
 
-            CurrentMapTiles = new ObservableCollection<string>();
+            CurrentMapTiles = new ObservableCollection<Tile>();
         }
 
         internal void LoadLevel()
@@ -119,7 +132,7 @@ namespace F16Viper.LevelEditor.ViewModel
                 {
                     var textureName = _currentLevel.Textures[tile];
 
-                    CurrentMapTiles.Add(TileMapping[textureName]);
+                    CurrentMapTiles.Add(new Tile(TileMapping[textureName]));
                 }
             }
         }
@@ -145,7 +158,7 @@ namespace F16Viper.LevelEditor.ViewModel
 
             foreach (var tile in CurrentMapTiles)
             {
-                var tileNameOnly = TileMapping.FirstOrDefault(a => a.Value == tile).Key;
+                var tileNameOnly = TileMapping.FirstOrDefault(a => a.Value == tile.FilePath).Key;
 
                 var textureIndex = _currentLevel.Textures.IndexOf(tileNameOnly);
 

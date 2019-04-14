@@ -13,6 +13,7 @@ namespace F16Viper.LevelEditor
             InitializeComponent();
 
             DataContext = new MainViewModel();
+
         }
 
         private void MnuItemExit_Click(object sender, RoutedEventArgs e)
@@ -38,6 +39,9 @@ namespace F16Viper.LevelEditor
         private void BtnAddTile_Click(object sender, RoutedEventArgs e)
         {
             ViewModel.AddTile();
+
+            lvMap.SelectedIndex = lvMap.Items.Count - 1;
+            lvMap.ScrollIntoView(lvMap.SelectedItem);
         }
     }
 }
