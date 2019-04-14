@@ -127,6 +127,23 @@ namespace F16Viper.LevelEditor.ViewModel
                 }
             }
 
+            _currentLevel = new LevelJSON();
+
+            foreach (var tile in CurrentMapTiles)
+            {
+                var tileNameOnly = new FileInfo(tile).Name;
+
+                var textureIndex = _currentLevel.Textures.IndexOf(tileNameOnly);
+
+                if (textureIndex == -1)
+                {
+                    _currentLevel.Textures.Add(tileNameOnly);
+                    textureIndex = _currentLevel.Textures.Count - 1;
+                }
+
+                _currentLevel.Tiles.Add(textureIndex);
+            }
+            
             LevelManager.SaveLevel(_currentFileName, _currentLevel);
         }
 
