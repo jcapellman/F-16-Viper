@@ -1,10 +1,7 @@
 ﻿using System.Windows;
 
-namespace src
+namespace F16Viper.LevelEditor
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()

@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\F16Viper.Common.library\F16Viper.Common.library.csproj" />
+  </ItemGroup>
+
 </Project>
