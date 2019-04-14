@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
@@ -15,6 +16,8 @@ namespace F16Viper.LevelEditor.ViewModel
     {
         private string _currentFileName = string.Empty;
         private LevelJSON _currentLevel;
+
+        private Dictionary<string, string> TileMapping = new Dictionary<string, string>();
 
         private ObservableCollection<string> _tiles;
 
@@ -73,7 +76,11 @@ namespace F16Viper.LevelEditor.ViewModel
 
             foreach (var file in files)
             {
-                Tiles.Add(new FileInfo(file).FullName);
+                var fileInfo = new FileInfo(file);
+
+                TileMapping.Add(fileInfo.Name, fileInfo.FullName);
+
+                Tiles.Add(fileInfo.FullName);
             }
 
             SelectedTile = Tiles.FirstOrDefault();
@@ -131,13 +138,14 @@ namespace F16Viper.LevelEditor.ViewModel
 
             foreach (var tile in CurrentMapTiles)
             {
-                var tileNameOnly = new FileInfo(tile).Name;
+                var tileNameOnly = TileMapping.FirstOrDefault(a => a.Value == tile).Key;
 
                 var textureIndex = _currentLevel.Textures.IndexOf(tileNameOnly);
 
                 if (textureIndex == -1)
                 {
                     _currentLevel.Textures.Add(tileNameOnly);
+
                     textureIndex = _currentLevel.Textures.Count - 1;
                 }
 
