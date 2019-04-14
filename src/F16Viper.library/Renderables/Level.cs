@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-
+using System.IO;
+using System.Linq;
 using F16Viper.Common.library.Managers;
 
 using F16Viper.library.Containers;
@@ -27,7 +28,7 @@ namespace F16Viper.library.Renderables
         {
             var levelObject = LevelManager.LoadLevel(_levelName);
 
-            foreach (var texture in levelObject.Textures)
+            foreach (var texture in levelObject.Textures.Select(Path.GetFileNameWithoutExtension))
             {
                 _textures.Add(contentManager.Load<Texture2D>($"Tiles/{texture}"));
             }
