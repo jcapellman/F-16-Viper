@@ -15,12 +15,12 @@
 
         <Menu Grid.Row="0">
             <MenuItem Header="_File">
-                <MenuItem Header="_New" Click="mnuItemNew_Click" />
-                <MenuItem Header="_Open" Click="mnuItemOpen_Click" />
+                <MenuItem Header="_New" Click="MnuItemNew_Click" />
+                <MenuItem Header="_Open" Click="MnuItemOpen_Click" />
                 <Separator />
-                <MenuItem Header="_Save" Click="mnuItemSave_Click" />
+                <MenuItem Header="_Save" Click="MnuItemSave_Click" />
                 <Separator />
-                <MenuItem Header="_Exit" Click="mnuItemExit_Click" />
+                <MenuItem Header="_Exit" Click="MnuItemExit_Click" />
             </MenuItem>
         </Menu>
 
