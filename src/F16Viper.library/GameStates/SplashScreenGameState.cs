@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-using F16Viper.library.GameStates.Base;
+﻿using F16Viper.library.GameStates.Base;
 using F16Viper.library.Renderables;
 
 using Microsoft.Xna.Framework;
@@ -23,9 +21,9 @@ namespace F16Viper.library.GameStates
 
         public override void Update(GameTime gameTime, KeyboardState keyboardState, GamePadState gamePadState)
         {
-            if (keyboardState.GetPressedKeys().Any())
+            if (_oldKeyboardState.IsKeyUp(Keys.Space) && keyboardState.IsKeyDown(Keys.Space))
             {
-                ChangeState(typeof(MainMenuGameState));
+                ChangeState(typeof(MainGameState));
             }
 
             base.Update(gameTime, keyboardState, gamePadState);
