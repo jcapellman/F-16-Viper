@@ -1,19 +1,11 @@
-﻿using System;
-
-namespace F16Viper
+﻿namespace F16Viper
 {
-    /// <summary>
-    /// The main class.
-    /// </summary>
     public static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        static void Main()
+        public static void Main()
         {
-            var factory = new MonoGame.Framework.GameFrameworkViewSource<MainGame>();
-            Windows.ApplicationModel.Core.CoreApplication.Run(factory);
+            var game = new MainGame();
+            game.Run();
         }
     }
 }

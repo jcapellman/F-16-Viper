@@ -1,4 +1,6 @@
-﻿using F16Viper.library.GameStates.Base;
+﻿using System;
+
+using F16Viper.library.GameStates.Base;
 using F16Viper.library.Renderables;
 
 using Microsoft.Xna.Framework;
@@ -13,10 +15,17 @@ namespace F16Viper.library.GameStates
 
         public override void LoadContent(ContentManager contentManager)
         {
-            var background = new FSSplash(BackgroundTextureName);
-            background.LoadContent(contentManager);
+            try
+            {
+                var background = new FSSplash(BackgroundTextureName);
+                background.LoadContent(contentManager);
 
-            AddRenderable(background);
+                AddRenderable(background);
+            }
+            catch (Exception)
+            {
+                // Allow the app to start even when splash content is missing.
+            }
         }
 
         public override void Update(GameTime gameTime, KeyboardState keyboardState, GamePadState gamePadState)

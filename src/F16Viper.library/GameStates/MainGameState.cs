@@ -1,4 +1,6 @@
-﻿using F16Viper.library.GameStates.Base;
+﻿using System;
+
+using F16Viper.library.GameStates.Base;
 using F16Viper.library.Renderables;
 
 using Microsoft.Xna.Framework;
@@ -11,37 +13,56 @@ namespace F16Viper.library.GameStates
     {
         public override void LoadContent(ContentManager contentManager)
         {
-            var level = new Level("E1M1");
-            level.LoadContent(contentManager);
+            try
+            {
+                var level = new Level("E1M1");
+                level.LoadContent(contentManager);
 
-            AddRenderable(level);
+                AddRenderable(level);
+            }
+            catch (Exception)
+            {
+                // Allow the game to start without level content.
+            }
 
-            var player = new Player();
-            player.LoadContent(contentManager);
+            try
+            {
+                var player = new Player();
+                player.LoadContent(contentManager);
 
-            AddRenderable(player);
+                AddRenderable(player);
+            }
+            catch (Exception)
+            {
+                // Allow the game to start without player content.
+            }
         }
 
         public override void Update(GameTime gameTime, KeyboardState keyboardState, GamePadState gamePadState)
         {
-            if (keyboardState.IsKeyDown(Keys.Left))
-            {
-                GetRenderable<Player>().UpdatePosition(-Player.MOVEMENT_X, 0);
-            }
+            var player = GetRenderable<Player>();
 
-            if (keyboardState.IsKeyDown(Keys.Right))
+            if (player != null)
             {
-                GetRenderable<Player>().UpdatePosition(Player.MOVEMENT_X, 0);
-            }
+                if (keyboardState.IsKeyDown(Keys.Left))
+                {
+                    player.UpdatePosition(-Player.MOVEMENT_X, 0);
+                }
 
-            if (keyboardState.IsKeyDown(Keys.Up))
-            {
-                GetRenderable<Player>().UpdatePosition(0, -Player.MOVEMENT_Y);
-            }
+                if (keyboardState.IsKeyDown(Keys.Right))
+                {
+                    player.UpdatePosition(Player.MOVEMENT_X, 0);
+                }
 
-            if (keyboardState.IsKeyDown(Keys.Down))
-            {
-                GetRenderable<Player>().UpdatePosition(0, Player.MOVEMENT_Y);
+                if (keyboardState.IsKeyDown(Keys.Up))
+                {
+                    player.UpdatePosition(0, -Player.MOVEMENT_Y);
+                }
+
+                if (keyboardState.IsKeyDown(Keys.Down))
+                {
+                    player.UpdatePosition(0, Player.MOVEMENT_Y);
+                }
             }
 
             if (_oldKeyboardState.IsKeyUp(Keys.Space) && keyboardState.IsKeyDown(Keys.Space))
