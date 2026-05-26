@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Windows.Forms;
+using Microsoft.Win32;
 
 using F16Viper.Common.library.JSONObjects;
 using F16Viper.Common.library.Managers;
@@ -150,25 +150,24 @@ namespace F16Viper.LevelEditor.ViewModel
 
         internal void LoadLevel()
         {
-            using (var ofd = new OpenFileDialog())
+            var ofd = new OpenFileDialog();
+
+            ofd.Filter = "level files (*.map)|*.map";
+
+            if (ofd.ShowDialog() != true)
             {
-                ofd.Filter = "level files (*.map)|*.map";
+                return;
+            }
 
-                if (ofd.ShowDialog() != DialogResult.OK)
-                {
-                    return;
-                }
+            _currentFileName = ofd.FileName;
 
-                _currentFileName = ofd.FileName;
+            _currentLevel = LevelManager.LoadLevelFile(_currentFileName);
 
-                _currentLevel = LevelManager.LoadLevelFile(_currentFileName);
+            foreach (var tile in _currentLevel.Tiles)
+            {
+                var textureName = _currentLevel.Textures[tile];
 
-                foreach (var tile in _currentLevel.Tiles)
-                {
-                    var textureName = _currentLevel.Textures[tile];
-
-                    CurrentMapTiles.Add(new Tile(TileMapping[textureName]));
-                }
+                CurrentMapTiles.Add(new Tile(TileMapping[textureName]));
             }
         }
 
@@ -176,17 +175,16 @@ namespace F16Viper.LevelEditor.ViewModel
         {
             if (string.IsNullOrEmpty(_currentFileName))
             {
-                using (var sfd = new SaveFileDialog())
+                var sfd = new SaveFileDialog();
+
+                sfd.Filter = "level files (*.map)|*.map";
+
+                if (sfd.ShowDialog() != true)
                 {
-                    sfd.Filter = "level files (*.map)|*.map";
-
-                    if (sfd.ShowDialog() != DialogResult.OK)
-                    {
-                        return;
-                    }
-
-                    _currentFileName = sfd.FileName;
+                    return;
                 }
+
+                _currentFileName = sfd.FileName;
             }
 
             _currentLevel = new LevelJSON();
@@ -206,7 +204,7 @@ namespace F16Viper.LevelEditor.ViewModel
 
                 _currentLevel.Tiles.Add(textureIndex);
             }
-            
+
             LevelManager.SaveLevel(_currentFileName, _currentLevel);
         }
 

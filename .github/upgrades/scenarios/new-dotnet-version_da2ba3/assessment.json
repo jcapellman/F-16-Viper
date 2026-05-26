@@ -1,0 +1,1549 @@
+{
+  "settings": {
+    "components": {
+      "code": true,
+      "binaries": false
+    },
+    "targetId": "net10.0",
+    "targetDisplayName": ".NETCoreApp,Version=v10.0"
+  },
+  "analysisStartTime": "2026-05-26T00:21:07.767935Z",
+  "analysisEndTime": "2026-05-26T00:21:08.4501959Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 3,
+      "issues": 4,
+      "incidents": 65,
+      "effort": 65
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 60,
+        "Optional": 0,
+        "Potential": 5,
+        "Information": 0
+      },
+      "category": {
+        "Project": 2,
+        "Api": 63
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "F16Viper.Common.library\\F16Viper.Common.library.csproj",
+      "startingProject": true,
+      "issues": 0,
+      "storyPoints": 0,
+      "properties": {
+        "appName": "F16Viper.Common.library",
+        "projectKind": "ClassLibrary",
+        "frameworks": [
+          "netstandard2.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 2,
+        "numberOfCodeFiles": 2,
+        "linesTotal": 41,
+        "linesOfCode": 41,
+        "totalApiScanned": 41,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [],
+      "features": []
+    },
+    {
+      "path": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+      "startingProject": true,
+      "issues": 3,
+      "storyPoints": 64,
+      "properties": {
+        "appName": "F16Viper.LevelEditor",
+        "projectKind": "Wpf",
+        "frameworks": [
+          "netcoreapp3.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 3,
+        "numberOfCodeFiles": 3,
+        "linesTotal": 289,
+        "linesOfCode": 289,
+        "totalApiScanned": 259,
+        "minLinesOfCodeToChange": 63,
+        "maxLinesOfCodeToChange": 63
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "7bdfb5ae-c2aa-426b-8e86-44fd27922443",
+          "ruleId": "Project.0002",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: netcoreapp3.0\nRecommended target framework: net10.0-windows",
+              "protected": "Current target framework: netcoreapp3.0\nRecommended target framework: net10.0-windows"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+            "snippet": "Current target framework: netcoreapp3.0\nRecommended target framework: net10.0-windows",
+            "protectedSnippet": "Current target framework: netcoreapp3.0\nRecommended target framework: net10.0-windows",
+            "properties": {
+              "CurrentTargetFramework": "netcoreapp3.0",
+              "RecommendedTargetFramework": "net10.0-windows"
+            }
+          }
+        },
+        {
+          "incidentId": "acfd096b-8c92-42d0-b495-fb1a1c377e35",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "app.Run();",
+              "protected": "M:System.Windows.Application.Run"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\App.g.i.cs",
+            "snippet": "app.Run();",
+            "protectedSnippet": "M:System.Windows.Application.Run",
+            "label": "M:System.Windows.Application.Run",
+            "line": 66,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "d051d501-b30a-4074-a4ce-dac0ddcd8f72",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: URI length limits removed ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "this.StartupUri = new System.Uri(\u0022MainWindow.xaml\u0022, System.UriKind.Relative);",
+              "protected": "T:System.Uri"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\App.g.i.cs",
+            "snippet": "this.StartupUri = new System.Uri(\u0022MainWindow.xaml\u0022, System.UriKind.Relative);",
+            "protectedSnippet": "T:System.Uri",
+            "label": "T:System.Uri",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/uri-length-limits-removed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 51,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "dad213cd-e8ed-4cf0-9c25-e34eef1e42bf",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: URI length limits removed ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "this.StartupUri = new System.Uri(\u0022MainWindow.xaml\u0022, System.UriKind.Relative);",
+              "protected": "M:System.Uri.#ctor(System.String,System.UriKind)"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\App.g.i.cs",
+            "snippet": "this.StartupUri = new System.Uri(\u0022MainWindow.xaml\u0022, System.UriKind.Relative);",
+            "protectedSnippet": "M:System.Uri.#ctor(System.String,System.UriKind)",
+            "label": "M:System.Uri.#ctor(System.String,System.UriKind)",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/uri-length-limits-removed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 51,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "219e51cb-072a-41a6-b61e-2a82d2837b67",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: URI length limits removed ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "this.StartupUri = new System.Uri(\u0022MainWindow.xaml\u0022, System.UriKind.Relative);",
+              "protected": "T:System.Uri"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\App.g.i.cs",
+            "snippet": "this.StartupUri = new System.Uri(\u0022MainWindow.xaml\u0022, System.UriKind.Relative);",
+            "protectedSnippet": "T:System.Uri",
+            "label": "T:System.Uri",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/uri-length-limits-removed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 51,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "d1cecb09-0058-4239-a38a-bd35543269fb",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "this.StartupUri = new System.Uri(\u0022MainWindow.xaml\u0022, System.UriKind.Relative);",
+              "protected": "P:System.Windows.Application.StartupUri"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\App.g.i.cs",
+            "snippet": "this.StartupUri = new System.Uri(\u0022MainWindow.xaml\u0022, System.UriKind.Relative);",
+            "protectedSnippet": "P:System.Windows.Application.StartupUri",
+            "label": "P:System.Windows.Application.StartupUri",
+            "line": 51,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "8405863e-43af-498a-8130-ce5ce23ffb01",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Application",
+              "protected": "M:System.Windows.Application.#ctor"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\App.xaml.cs",
+            "snippet": "Application",
+            "protectedSnippet": "M:System.Windows.Application.#ctor",
+            "label": "M:System.Windows.Application.#ctor",
+            "line": 13,
+            "column": 31
+          }
+        },
+        {
+          "incidentId": "bfcb3dfb-1b45-4ee7-8107-0efa221cdfad",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Application",
+              "protected": "T:System.Windows.Application"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\App.xaml.cs",
+            "snippet": "Application",
+            "protectedSnippet": "T:System.Windows.Application",
+            "label": "T:System.Windows.Application",
+            "line": 13,
+            "column": 31
+          }
+        },
+        {
+          "incidentId": "9adcb23e-61c6-48fa-af7a-5fba43168287",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "this.Remove.Click \u002B= new System.Windows.RoutedEventHandler(this.BtnRemove_Click);",
+              "protected": "T:System.Windows.Controls.MenuItem"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "this.Remove.Click \u002B= new System.Windows.RoutedEventHandler(this.BtnRemove_Click);",
+            "protectedSnippet": "T:System.Windows.Controls.MenuItem",
+            "label": "T:System.Windows.Controls.MenuItem",
+            "line": 147,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "764927ca-8b92-4e62-a534-a5a725acd680",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "this.Remove.Click \u002B= new System.Windows.RoutedEventHandler(this.BtnRemove_Click);",
+              "protected": "T:System.Windows.RoutedEventHandler"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "this.Remove.Click \u002B= new System.Windows.RoutedEventHandler(this.BtnRemove_Click);",
+            "protectedSnippet": "T:System.Windows.RoutedEventHandler",
+            "label": "T:System.Windows.RoutedEventHandler",
+            "line": 147,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "76adb9ca-e835-4e0d-9458-59ff48ffcd22",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "this.Remove.Click \u002B= new System.Windows.RoutedEventHandler(this.BtnRemove_Click);",
+              "protected": "T:System.Windows.RoutedEventHandler"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "this.Remove.Click \u002B= new System.Windows.RoutedEventHandler(this.BtnRemove_Click);",
+            "protectedSnippet": "T:System.Windows.RoutedEventHandler",
+            "label": "T:System.Windows.RoutedEventHandler",
+            "line": 147,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "34ec41f8-fdc2-4aed-a119-c1b0d9fc1d83",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "this.Remove.Click \u002B= new System.Windows.RoutedEventHandler(this.BtnRemove_Click);",
+              "protected": "E:System.Windows.Controls.MenuItem.Click"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "this.Remove.Click \u002B= new System.Windows.RoutedEventHandler(this.BtnRemove_Click);",
+            "protectedSnippet": "E:System.Windows.Controls.MenuItem.Click",
+            "label": "E:System.Windows.Controls.MenuItem.Click",
+            "line": 147,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "33c3e39f-61d4-402f-a4ac-663322706aef",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "this.Remove = ((System.Windows.Controls.MenuItem)(target));",
+              "protected": "T:System.Windows.Controls.MenuItem"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "this.Remove = ((System.Windows.Controls.MenuItem)(target));",
+            "protectedSnippet": "T:System.Windows.Controls.MenuItem",
+            "label": "T:System.Windows.Controls.MenuItem",
+            "line": 144,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "3742b603-b56f-47b4-a474-d34e22c1bc77",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "this.ZoneIformationList = ((System.Windows.Controls.ContextMenu)(target));",
+              "protected": "T:System.Windows.Controls.ContextMenu"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "this.ZoneIformationList = ((System.Windows.Controls.ContextMenu)(target));",
+            "protectedSnippet": "T:System.Windows.Controls.ContextMenu",
+            "label": "T:System.Windows.Controls.ContextMenu",
+            "line": 141,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "6bd6536a-ebc2-46a7-95b4-a7dee25db672",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "this.lvMap = ((System.Windows.Controls.ListView)(target));",
+              "protected": "T:System.Windows.Controls.ListView"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "this.lvMap = ((System.Windows.Controls.ListView)(target));",
+            "protectedSnippet": "T:System.Windows.Controls.ListView",
+            "label": "T:System.Windows.Controls.ListView",
+            "line": 138,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "b26e5272-4303-4c52-92a5-97040f7a03f5",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "((System.Windows.Controls.Button)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.BtnAddTile_Click);",
+              "protected": "T:System.Windows.RoutedEventHandler"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "((System.Windows.Controls.Button)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.BtnAddTile_Click);",
+            "protectedSnippet": "T:System.Windows.RoutedEventHandler",
+            "label": "T:System.Windows.RoutedEventHandler",
+            "line": 132,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "eb8f4cb4-6308-47b1-80be-5521ed59ff90",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "((System.Windows.Controls.Button)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.BtnAddTile_Click);",
+              "protected": "T:System.Windows.RoutedEventHandler"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "((System.Windows.Controls.Button)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.BtnAddTile_Click);",
+            "protectedSnippet": "T:System.Windows.RoutedEventHandler",
+            "label": "T:System.Windows.RoutedEventHandler",
+            "line": 132,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "a5bcc4cf-704f-40b0-bf1b-5d9b5d830379",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "((System.Windows.Controls.Button)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.BtnAddTile_Click);",
+              "protected": "E:System.Windows.Controls.Primitives.ButtonBase.Click"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "((System.Windows.Controls.Button)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.BtnAddTile_Click);",
+            "protectedSnippet": "E:System.Windows.Controls.Primitives.ButtonBase.Click",
+            "label": "E:System.Windows.Controls.Primitives.ButtonBase.Click",
+            "line": 132,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "cde6acd4-7deb-44f2-b76f-df67336e378c",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemExit_Click);",
+              "protected": "T:System.Windows.RoutedEventHandler"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemExit_Click);",
+            "protectedSnippet": "T:System.Windows.RoutedEventHandler",
+            "label": "T:System.Windows.RoutedEventHandler",
+            "line": 124,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "c62403ff-0a58-45f3-bbe7-4a87793848a2",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemExit_Click);",
+              "protected": "T:System.Windows.RoutedEventHandler"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemExit_Click);",
+            "protectedSnippet": "T:System.Windows.RoutedEventHandler",
+            "label": "T:System.Windows.RoutedEventHandler",
+            "line": 124,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "6fc54527-4d27-44a8-b250-5f6d916c1234",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemExit_Click);",
+              "protected": "E:System.Windows.Controls.MenuItem.Click"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemExit_Click);",
+            "protectedSnippet": "E:System.Windows.Controls.MenuItem.Click",
+            "label": "E:System.Windows.Controls.MenuItem.Click",
+            "line": 124,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "277978c5-e9db-443f-8ffa-0ddcbff0e2df",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemSave_Click);",
+              "protected": "T:System.Windows.RoutedEventHandler"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemSave_Click);",
+            "protectedSnippet": "T:System.Windows.RoutedEventHandler",
+            "label": "T:System.Windows.RoutedEventHandler",
+            "line": 116,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "a7ee4cc4-a482-43b1-a81d-e7cc2eeadff8",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemSave_Click);",
+              "protected": "T:System.Windows.RoutedEventHandler"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemSave_Click);",
+            "protectedSnippet": "T:System.Windows.RoutedEventHandler",
+            "label": "T:System.Windows.RoutedEventHandler",
+            "line": 116,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "dd2e4fad-230b-45a2-9e0c-1df4c8936a1a",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemSave_Click);",
+              "protected": "E:System.Windows.Controls.MenuItem.Click"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemSave_Click);",
+            "protectedSnippet": "E:System.Windows.Controls.MenuItem.Click",
+            "label": "E:System.Windows.Controls.MenuItem.Click",
+            "line": 116,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "f026e128-cca0-4931-be73-8a0660562948",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemOpen_Click);",
+              "protected": "T:System.Windows.RoutedEventHandler"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemOpen_Click);",
+            "protectedSnippet": "T:System.Windows.RoutedEventHandler",
+            "label": "T:System.Windows.RoutedEventHandler",
+            "line": 108,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "fbea3bcf-f67a-4bf2-8c24-6c843c8440a3",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemOpen_Click);",
+              "protected": "T:System.Windows.RoutedEventHandler"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemOpen_Click);",
+            "protectedSnippet": "T:System.Windows.RoutedEventHandler",
+            "label": "T:System.Windows.RoutedEventHandler",
+            "line": 108,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "75389102-6d55-49d3-ad25-f9dd9c9d13e5",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemOpen_Click);",
+              "protected": "E:System.Windows.Controls.MenuItem.Click"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemOpen_Click);",
+            "protectedSnippet": "E:System.Windows.Controls.MenuItem.Click",
+            "label": "E:System.Windows.Controls.MenuItem.Click",
+            "line": 108,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "7f830959-47f5-4da1-b857-7e040a4f0cbf",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemNew_Click);",
+              "protected": "T:System.Windows.RoutedEventHandler"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemNew_Click);",
+            "protectedSnippet": "T:System.Windows.RoutedEventHandler",
+            "label": "T:System.Windows.RoutedEventHandler",
+            "line": 100,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "e9709571-a744-421d-965b-fda6c9228715",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemNew_Click);",
+              "protected": "T:System.Windows.RoutedEventHandler"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemNew_Click);",
+            "protectedSnippet": "T:System.Windows.RoutedEventHandler",
+            "label": "T:System.Windows.RoutedEventHandler",
+            "line": 100,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "f5e135d9-1c04-4a8e-9bae-5dc565157671",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemNew_Click);",
+              "protected": "E:System.Windows.Controls.MenuItem.Click"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "((System.Windows.Controls.MenuItem)(target)).Click \u002B= new System.Windows.RoutedEventHandler(this.MnuItemNew_Click);",
+            "protectedSnippet": "E:System.Windows.Controls.MenuItem.Click",
+            "label": "E:System.Windows.Controls.MenuItem.Click",
+            "line": 100,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "4b6c5654-8dc5-4037-b0b8-6ac69d75245f",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Windows.Application.LoadComponent(this, resourceLocater);",
+              "protected": "T:System.Windows.Application"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "System.Windows.Application.LoadComponent(this, resourceLocater);",
+            "protectedSnippet": "T:System.Windows.Application",
+            "label": "T:System.Windows.Application",
+            "line": 82,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "2e0e4ddc-abaf-41a9-b15e-231365885607",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Windows.Application.LoadComponent(this, resourceLocater);",
+              "protected": "M:System.Windows.Application.LoadComponent(System.Object,System.Uri)"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "System.Windows.Application.LoadComponent(this, resourceLocater);",
+            "protectedSnippet": "M:System.Windows.Application.LoadComponent(System.Object,System.Uri)",
+            "label": "M:System.Windows.Application.LoadComponent(System.Object,System.Uri)",
+            "line": 82,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "a49a1768-8528-43f6-bbef-07e96ad7e75d",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: URI length limits removed ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Uri resourceLocater = new System.Uri(\u0022/F16Viper.LevelEditor;component/mainwindow.xaml\u0022, System.UriKind.Relative);",
+              "protected": "T:System.Uri"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "System.Uri resourceLocater = new System.Uri(\u0022/F16Viper.LevelEditor;component/mainwindow.xaml\u0022, System.UriKind.Relative);",
+            "protectedSnippet": "T:System.Uri",
+            "label": "T:System.Uri",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/uri-length-limits-removed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 79,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "5cd9a924-c8ea-49e5-85e2-3f5e19e75261",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: URI length limits removed ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Uri resourceLocater = new System.Uri(\u0022/F16Viper.LevelEditor;component/mainwindow.xaml\u0022, System.UriKind.Relative);",
+              "protected": "M:System.Uri.#ctor(System.String,System.UriKind)"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "System.Uri resourceLocater = new System.Uri(\u0022/F16Viper.LevelEditor;component/mainwindow.xaml\u0022, System.UriKind.Relative);",
+            "protectedSnippet": "M:System.Uri.#ctor(System.String,System.UriKind)",
+            "label": "M:System.Uri.#ctor(System.String,System.UriKind)",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/uri-length-limits-removed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 79,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "c911e536-d9a0-425b-ad14-c2c2892a881d",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Remove",
+              "protected": "T:System.Windows.Controls.MenuItem"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "Remove",
+            "protectedSnippet": "T:System.Windows.Controls.MenuItem",
+            "label": "T:System.Windows.Controls.MenuItem",
+            "line": 62,
+            "column": 50
+          }
+        },
+        {
+          "incidentId": "51901d0d-2af7-477f-b6c7-e4da4e4747a5",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "ZoneIformationList",
+              "protected": "T:System.Windows.Controls.ContextMenu"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "ZoneIformationList",
+            "protectedSnippet": "T:System.Windows.Controls.ContextMenu",
+            "label": "T:System.Windows.Controls.ContextMenu",
+            "line": 54,
+            "column": 53
+          }
+        },
+        {
+          "incidentId": "762b4a60-eb31-4354-b0af-b582064fc3a7",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "lvMap",
+              "protected": "T:System.Windows.Controls.ListView"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "lvMap",
+            "protectedSnippet": "T:System.Windows.Controls.ListView",
+            "label": "T:System.Windows.Controls.ListView",
+            "line": 46,
+            "column": 50
+          }
+        },
+        {
+          "incidentId": "2233cf16-2a69-42f8-96d2-6592cd22ba84",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "private void BtnRemove_Click(object sender, RoutedEventArgs e)",
+              "protected": "T:System.Windows.RoutedEventArgs"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "private void BtnRemove_Click(object sender, RoutedEventArgs e)",
+            "protectedSnippet": "T:System.Windows.RoutedEventArgs",
+            "label": "T:System.Windows.RoutedEventArgs",
+            "line": 46,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "f99cf0af-b555-4a97-80aa-33e125446135",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "private void BtnAddTile_Click(object sender, RoutedEventArgs e)",
+              "protected": "T:System.Windows.RoutedEventArgs"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "private void BtnAddTile_Click(object sender, RoutedEventArgs e)",
+            "protectedSnippet": "T:System.Windows.RoutedEventArgs",
+            "label": "T:System.Windows.RoutedEventArgs",
+            "line": 38,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "d878caf5-766e-4c93-bc61-3d214217de04",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "lvMap.ScrollIntoView(lvMap.SelectedItem);",
+              "protected": "T:System.Windows.Controls.ListView"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "lvMap.ScrollIntoView(lvMap.SelectedItem);",
+            "protectedSnippet": "T:System.Windows.Controls.ListView",
+            "label": "T:System.Windows.Controls.ListView",
+            "line": 43,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "8dc3c361-e19d-49ea-9fe6-d51f544e97ad",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "lvMap.ScrollIntoView(lvMap.SelectedItem);",
+              "protected": "P:System.Windows.Controls.Primitives.Selector.SelectedItem"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "lvMap.ScrollIntoView(lvMap.SelectedItem);",
+            "protectedSnippet": "P:System.Windows.Controls.Primitives.Selector.SelectedItem",
+            "label": "P:System.Windows.Controls.Primitives.Selector.SelectedItem",
+            "line": 43,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "322c66ee-d8bc-4fa0-be70-568bb0ee28a2",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "lvMap.ScrollIntoView(lvMap.SelectedItem);",
+              "protected": "T:System.Windows.Controls.ListView"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "lvMap.ScrollIntoView(lvMap.SelectedItem);",
+            "protectedSnippet": "T:System.Windows.Controls.ListView",
+            "label": "T:System.Windows.Controls.ListView",
+            "line": 43,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "899aa94c-7fe1-4cbe-9de4-85c04ed36bc7",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "lvMap.ScrollIntoView(lvMap.SelectedItem);",
+              "protected": "M:System.Windows.Controls.ListBox.ScrollIntoView(System.Object)"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "lvMap.ScrollIntoView(lvMap.SelectedItem);",
+            "protectedSnippet": "M:System.Windows.Controls.ListBox.ScrollIntoView(System.Object)",
+            "label": "M:System.Windows.Controls.ListBox.ScrollIntoView(System.Object)",
+            "line": 43,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "878a788e-b414-48b3-9ab6-d5949870576f",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "lvMap.SelectedIndex = lvMap.Items.Count - 1;",
+              "protected": "T:System.Windows.Controls.ListView"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "lvMap.SelectedIndex = lvMap.Items.Count - 1;",
+            "protectedSnippet": "T:System.Windows.Controls.ListView",
+            "label": "T:System.Windows.Controls.ListView",
+            "line": 42,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "37083514-18fb-48ed-86a5-94be2f0566c3",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "lvMap.SelectedIndex = lvMap.Items.Count - 1;",
+              "protected": "T:System.Windows.Controls.ItemCollection"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "lvMap.SelectedIndex = lvMap.Items.Count - 1;",
+            "protectedSnippet": "T:System.Windows.Controls.ItemCollection",
+            "label": "T:System.Windows.Controls.ItemCollection",
+            "line": 42,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "00da3f35-1280-453c-8813-95f0de80314f",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "lvMap.SelectedIndex = lvMap.Items.Count - 1;",
+              "protected": "P:System.Windows.Controls.ItemsControl.Items"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "lvMap.SelectedIndex = lvMap.Items.Count - 1;",
+            "protectedSnippet": "P:System.Windows.Controls.ItemsControl.Items",
+            "label": "P:System.Windows.Controls.ItemsControl.Items",
+            "line": 42,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "bf51fbe9-1ada-4f58-b121-91e9acfec492",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "lvMap.SelectedIndex = lvMap.Items.Count - 1;",
+              "protected": "P:System.Windows.Controls.ItemCollection.Count"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "lvMap.SelectedIndex = lvMap.Items.Count - 1;",
+            "protectedSnippet": "P:System.Windows.Controls.ItemCollection.Count",
+            "label": "P:System.Windows.Controls.ItemCollection.Count",
+            "line": 42,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "187e0942-df31-4d53-a893-c6b56b2959ed",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "lvMap.SelectedIndex = lvMap.Items.Count - 1;",
+              "protected": "T:System.Windows.Controls.ListView"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "lvMap.SelectedIndex = lvMap.Items.Count - 1;",
+            "protectedSnippet": "T:System.Windows.Controls.ListView",
+            "label": "T:System.Windows.Controls.ListView",
+            "line": 42,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "994595ce-c8b6-4cb1-9b97-719d188b6845",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "lvMap.SelectedIndex = lvMap.Items.Count - 1;",
+              "protected": "P:System.Windows.Controls.Primitives.Selector.SelectedIndex"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "lvMap.SelectedIndex = lvMap.Items.Count - 1;",
+            "protectedSnippet": "P:System.Windows.Controls.Primitives.Selector.SelectedIndex",
+            "label": "P:System.Windows.Controls.Primitives.Selector.SelectedIndex",
+            "line": 42,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "5720a4ef-d822-4541-9b39-19c637864447",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "private void MnuItemSave_Click(object sender, RoutedEventArgs e)",
+              "protected": "T:System.Windows.RoutedEventArgs"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "private void MnuItemSave_Click(object sender, RoutedEventArgs e)",
+            "protectedSnippet": "T:System.Windows.RoutedEventArgs",
+            "label": "T:System.Windows.RoutedEventArgs",
+            "line": 33,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "2bb9c9bf-3a5d-4527-b8eb-e69491819cc0",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "private void MnuItemOpen_Click(object sender, RoutedEventArgs e)",
+              "protected": "T:System.Windows.RoutedEventArgs"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "private void MnuItemOpen_Click(object sender, RoutedEventArgs e)",
+            "protectedSnippet": "T:System.Windows.RoutedEventArgs",
+            "label": "T:System.Windows.RoutedEventArgs",
+            "line": 28,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "0d65ff2a-2869-4b8d-aa9b-579451ba7574",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "private void MnuItemNew_Click(object sender, RoutedEventArgs e)",
+              "protected": "T:System.Windows.RoutedEventArgs"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "private void MnuItemNew_Click(object sender, RoutedEventArgs e)",
+            "protectedSnippet": "T:System.Windows.RoutedEventArgs",
+            "label": "T:System.Windows.RoutedEventArgs",
+            "line": 23,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "760f02e4-1cf7-4ef1-bb51-e3b915f2785f",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "private void MnuItemExit_Click(object sender, RoutedEventArgs e)",
+              "protected": "T:System.Windows.RoutedEventArgs"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "private void MnuItemExit_Click(object sender, RoutedEventArgs e)",
+            "protectedSnippet": "T:System.Windows.RoutedEventArgs",
+            "label": "T:System.Windows.RoutedEventArgs",
+            "line": 18,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "9967622a-fb6e-461d-b411-ab64f89fb462",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Application.Current.Shutdown();",
+              "protected": "T:System.Windows.Application"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "Application.Current.Shutdown();",
+            "protectedSnippet": "T:System.Windows.Application",
+            "label": "T:System.Windows.Application",
+            "line": 20,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "49fdb737-01d7-4d14-abaf-15937efb9aba",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Application.Current.Shutdown();",
+              "protected": "T:System.Windows.Application"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "Application.Current.Shutdown();",
+            "protectedSnippet": "T:System.Windows.Application",
+            "label": "T:System.Windows.Application",
+            "line": 20,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "9ed7c4a2-23fd-45be-acd0-acaaf4d99831",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Application.Current.Shutdown();",
+              "protected": "P:System.Windows.Application.Current"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "Application.Current.Shutdown();",
+            "protectedSnippet": "P:System.Windows.Application.Current",
+            "label": "P:System.Windows.Application.Current",
+            "line": 20,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "a3b3aa71-ebb7-4a33-904e-0b2b1cf57d6b",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Application.Current.Shutdown();",
+              "protected": "M:System.Windows.Application.Shutdown"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "Application.Current.Shutdown();",
+            "protectedSnippet": "M:System.Windows.Application.Shutdown",
+            "label": "M:System.Windows.Application.Shutdown",
+            "line": 20,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "64c23343-ff48-444c-aecc-d701405e947a",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "DataContext = new MainViewModel();",
+              "protected": "P:System.Windows.FrameworkElement.DataContext"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "DataContext = new MainViewModel();",
+            "protectedSnippet": "P:System.Windows.FrameworkElement.DataContext",
+            "label": "P:System.Windows.FrameworkElement.DataContext",
+            "line": 14,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "1feeb342-0c4b-4e8f-8deb-624add5782a0",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "public MainWindow()\r\n        {\r\n            InitializeComponent();\r\n\r\n            DataContext = new MainViewModel();\r\n\r\n        }",
+              "protected": "M:System.Windows.Window.#ctor"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "public MainWindow()\r\n        {\r\n            InitializeComponent();\r\n\r\n            DataContext = new MainViewModel();\r\n\r\n        }",
+            "protectedSnippet": "M:System.Windows.Window.#ctor",
+            "label": "M:System.Windows.Window.#ctor",
+            "line": 10,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "55fdfc53-cec6-4a03-8e2b-c442aaa7ba19",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "DataContext",
+              "protected": "P:System.Windows.FrameworkElement.DataContext"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "DataContext",
+            "protectedSnippet": "P:System.Windows.FrameworkElement.DataContext",
+            "label": "P:System.Windows.FrameworkElement.DataContext",
+            "line": 8,
+            "column": 58
+          }
+        },
+        {
+          "incidentId": "2985d08a-b58c-4ec9-a74a-d110e3cc9e4a",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "DataContext = new MainViewModel();",
+              "protected": "P:System.Windows.FrameworkElement.DataContext"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "DataContext = new MainViewModel();",
+            "protectedSnippet": "P:System.Windows.FrameworkElement.DataContext",
+            "label": "P:System.Windows.FrameworkElement.DataContext",
+            "line": 14,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "1658f84b-ee77-48e7-b053-a220e59ebf4b",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "public MainWindow()\r\n        {\r\n            InitializeComponent();\r\n\r\n            DataContext = new MainViewModel();\r\n\r\n        }",
+              "protected": "M:System.Windows.Window.#ctor"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "public MainWindow()\r\n        {\r\n            InitializeComponent();\r\n\r\n            DataContext = new MainViewModel();\r\n\r\n        }",
+            "protectedSnippet": "M:System.Windows.Window.#ctor",
+            "label": "M:System.Windows.Window.#ctor",
+            "line": 10,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "c68744d3-93d7-49af-a368-3aa923953f2d",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "IComponentConnector",
+              "protected": "T:System.Windows.Markup.IComponentConnector"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\obj\\Debug\\netcoreapp3.0\\MainWindow.g.i.cs",
+            "snippet": "IComponentConnector",
+            "protectedSnippet": "T:System.Windows.Markup.IComponentConnector",
+            "label": "T:System.Windows.Markup.IComponentConnector",
+            "line": 41,
+            "column": 83
+          }
+        },
+        {
+          "incidentId": "6681c645-3f40-4c93-9697-8216b185df56",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "F16Viper.LevelEditor\\F16Viper.LevelEditor.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Window",
+              "protected": "T:System.Windows.Window"
+            },
+            "kind": "File",
+            "path": "F16Viper.LevelEditor\\MainWindow.xaml.cs",
+            "snippet": "Window",
+            "protectedSnippet": "T:System.Windows.Window",
+            "label": "T:System.Windows.Window",
+            "line": 6,
+            "column": 38
+          }
+        }
+      ],
+      "features": [
+        {
+          "featureId": "Wpf",
+          "incidents": [
+            "c68744d3-93d7-49af-a368-3aa923953f2d",
+            "994595ce-c8b6-4cb1-9b97-719d188b6845",
+            "187e0942-df31-4d53-a893-c6b56b2959ed",
+            "bf51fbe9-1ada-4f58-b121-91e9acfec492",
+            "00da3f35-1280-453c-8813-95f0de80314f",
+            "37083514-18fb-48ed-86a5-94be2f0566c3",
+            "878a788e-b414-48b3-9ab6-d5949870576f",
+            "899aa94c-7fe1-4cbe-9de4-85c04ed36bc7",
+            "322c66ee-d8bc-4fa0-be70-568bb0ee28a2",
+            "8dc3c361-e19d-49ea-9fe6-d51f544e97ad",
+            "d878caf5-766e-4c93-bc61-3d214217de04",
+            "762b4a60-eb31-4354-b0af-b582064fc3a7",
+            "51901d0d-2af7-477f-b6c7-e4da4e4747a5",
+            "c911e536-d9a0-425b-ad14-c2c2892a881d",
+            "f5e135d9-1c04-4a8e-9bae-5dc565157671",
+            "75389102-6d55-49d3-ad25-f9dd9c9d13e5",
+            "dd2e4fad-230b-45a2-9e0c-1df4c8936a1a",
+            "6fc54527-4d27-44a8-b250-5f6d916c1234",
+            "a5bcc4cf-704f-40b0-bf1b-5d9b5d830379",
+            "6bd6536a-ebc2-46a7-95b4-a7dee25db672",
+            "3742b603-b56f-47b4-a474-d34e22c1bc77",
+            "33c3e39f-61d4-402f-a4ac-663322706aef",
+            "34ec41f8-fdc2-4aed-a119-c1b0d9fc1d83",
+            "9adcb23e-61c6-48fa-af7a-5fba43168287"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "F16Viper.library\\F16Viper.library.shproj",
+      "startingProject": true,
+      "issues": 1,
+      "storyPoints": 1,
+      "properties": {
+        "appName": "F16Viper.library",
+        "projectKind": "DotNetCoreApp",
+        "frameworks": [
+          "netcore4.5.1"
+        ],
+        "languages": [
+          ""
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 11,
+        "numberOfCodeFiles": 11,
+        "linesTotal": 490,
+        "linesOfCode": 490,
+        "totalApiScanned": 0,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "53afa661-5a1b-4e9c-88ec-aac25b558f4d",
+          "ruleId": "Project.0002",
+          "projectPath": "F16Viper.library\\F16Viper.library.shproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: .NETCore,Version=v4.5.1\nRecommended target framework: net10.0",
+              "protected": "Current target framework: .NETCore,Version=v4.5.1\nRecommended target framework: net10.0"
+            },
+            "kind": "File",
+            "path": "F16Viper.library\\F16Viper.library.shproj",
+            "snippet": "Current target framework: .NETCore,Version=v4.5.1\nRecommended target framework: net10.0",
+            "protectedSnippet": "Current target framework: .NETCore,Version=v4.5.1\nRecommended target framework: net10.0",
+            "properties": {
+              "CurrentTargetFramework": ".NETCore,Version=v4.5.1",
+              "RecommendedTargetFramework": "net10.0"
+            }
+          }
+        }
+      ],
+      "features": []
+    }
+  ],
+  "rules": {
+    "Project.0002": {
+      "id": "Project.0002",
+      "isFeature": false,
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to corresponding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in modern .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0001": {
+      "id": "Api.0001",
+      "isFeature": false,
+      "description": "API is binary incompatible for selected .NET version: affects existing binaries, often requiring recompilation, because the API has changed in a way that prevents older binaries from loading or executing.",
+      "label": "Binary incompatible for selected .NET version",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Breaking changes in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262679",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0003": {
+      "id": "Api.0003",
+      "isFeature": false,
+      "description": "API has a behavioral change in selected .NET version: code and binaries may behave differently at runtime without needing recompilation, but the new behavior might be undesirable and require updates.",
+      "label": "Behavioral change in selected .NET version",
+      "severity": "Potential",
+      "effort": 1
+    },
+    "Wpf": {
+      "id": "Wpf",
+      "isFeature": false,
+      "description": "WPF APIs for building Windows desktop applications with XAML-based UI that are available in .NET on Windows. WPF provides rich desktop UI capabilities with data binding and styling. Enable Windows Desktop support: Option 1 (Recommended): Target net9.0-windows; Option 2: Add \u003CUseWindowsDesktop\u003Etrue\u003C/UseWindowsDesktop\u003E.",
+      "label": "WPF (Windows Presentation Foundation)",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "WPF on .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2342008",
+          "isCustom": false
+        }
+      ]
+    }
+  }
+}
